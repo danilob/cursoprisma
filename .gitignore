@@ -1,0 +1,7 @@
+#pastas
+
+.vscode
+node_modules
+
+#arquivos
+package-lock.json
