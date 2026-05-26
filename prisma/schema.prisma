@@ -1,6 +1,5 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
-
 generator client {
   provider = "prisma-client"
   output   = "../generated/prisma"
@@ -8,4 +7,18 @@ generator client {
 
 datasource db {
   provider = "sqlite"
+  url      = "file:../dev.db"
 }
+
+model User { 
+  id    Int     @id @default(autoincrement()) 
+  
+  githubID String  @unique
+  githubLogin String
+  avatarUrl String
+  
+  name  String
+  birthDate DateTime
+
+  createdAt DateTime @default(now())
+} 
