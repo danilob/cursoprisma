@@ -13,12 +13,6 @@ npx prisma init --datasource-provider sqlite --output ../generated/prisma
 
 ### Defina o arquivo SQLITE
 
-Caso no `schema.prisma` apresente a linha abaixo, remova-a:
-
-```typescript
-url      = env("DATABASE_URL")
-```
-
 No `.env`defina o caminho para o banco de dados sqlite
 
 ```bash

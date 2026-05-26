@@ -7,4 +7,5 @@ node_modules
 #arquivos
 package-lock.json
 .env
+.*db
 
