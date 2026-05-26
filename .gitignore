@@ -2,6 +2,9 @@
 
 .vscode
 node_modules
+/generated/prisma
 
 #arquivos
 package-lock.json
+.env
+
