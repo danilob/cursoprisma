@@ -13,7 +13,7 @@ npx prisma init --datasource-provider sqlite --output ../generated/prisma
 
 ### Defina o arquivo SQLITE
 
-No `.env`defina o caminho para o banco de dados sqlite
+No `.env` defina o caminho para o banco de dados sqlite
 
 ```bash
 DATABASE_URL="file:./dev.db"
