@@ -1,6 +1,6 @@
 # Curso Básico de Prisma
 
-Neste curso será utilizado como base a documentação oficial disponível no [site do prisma](https://prisma.io/), especificamente será utilizado [o guia rápido utilizando o sqlite](https://www.prisma.io/docs/prisma-orm/quickstart/sqlite).
+Neste curso será utilizado como base a documentação oficial disponível no [site do prisma](https://prisma.io/), especificamente será utilizado [o guia rápido utilizando o sqlite](https://www.prisma.io/docs/prisma-orm/quickstart/sqlite). Para acompanhar o passo a passo consulte a pasta [docs](./docs/).
 
 ### Pré-requisitos
 
