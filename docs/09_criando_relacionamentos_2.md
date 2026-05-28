@@ -1,20 +1,10 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-generator client {
-  provider = "prisma-client"
-  output   = "../generated/prisma"
-}
+### Relacionamento N:N
 
-datasource db {
-  provider = "sqlite"
-}
+Para configurar um relacionamento N:N no prisma iremos configurar no esquema um apontamento entre as models, mas para isso utilizaremos uma model intermediária.
 
-enum Gender {
-  MALE
-  FEMALE
-  NOT_SPECIFIED
-}
+Arquivo: `schema.prisma`:
 
+```typecript
 enum MealType {
   BREAKFAST
   LUNCH
@@ -40,20 +30,6 @@ model User {
   meals Meal[]
   foods Food[]
 } 
-
-model WeightLog {
-  id    Int     @id @default(autoincrement()) 
-  height Float
-  weight Float
-
-  //pk -> chave estrangeira
-  userId Int
-
-  createdAt DateTime @default(now())
-  
-  user User @relation(fields: [userId], references: [id])
-}
-
 
 model Meal {
   id          Int         @id @default(autoincrement())
@@ -105,3 +81,7 @@ model MealFood {
 
   @@unique([mealId, foodId])
 }
+```
+
+Conteúdo de um exemplo completo pode ser visto em  [src/07_script.ts](../src/07_script.ts):
+
