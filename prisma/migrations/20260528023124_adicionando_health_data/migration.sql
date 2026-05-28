@@ -1,0 +1,11 @@
+-- CreateTable
+CREATE TABLE "HealthData" (
+    "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "dailyCaloriesGoal" REAL NOT NULL,
+    "activityLevel" TEXT NOT NULL DEFAULT 'SEDENTARY',
+    "active" BOOLEAN NOT NULL DEFAULT true,
+    "createdAt" DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "closedAt" DATETIME,
+    "userId" INTEGER NOT NULL,
+    CONSTRAINT "HealthData_userId_fkey" FOREIGN KEY ("userId") REFERENCES "User" ("id") ON DELETE RESTRICT ON UPDATE CASCADE
+);

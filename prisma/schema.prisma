@@ -39,6 +39,7 @@ model User {
   weightLogs WeightLog[]
   meals Meal[]
   foods Food[]
+  healthData HealthData[]
 } 
 
 model WeightLog {
@@ -104,4 +105,28 @@ model MealFood {
   food          Food @relation(fields: [foodId], references: [id])
 
   @@unique([mealId, foodId])
+}
+
+enum ActivityLevel { 
+  SEDENTARY 
+  LIGHT 
+  MODERATE 
+  ACTIVE 
+  VERY_ACTIVE 
+} 
+
+model HealthData { 
+  id Int @id @default(autoincrement()) 
+  dailyCaloriesGoal Float 
+  
+  activityLevel ActivityLevel @default(SEDENTARY) 
+  
+  active Boolean @default(true) 
+  
+  createdAt DateTime @default(now()) 
+  closedAt DateTime? 
+  
+  userId Int
+  user User @relation(fields: [userId], references: [id]) 
+
 }
