@@ -1,6 +1,5 @@
 import { prisma, Gender } from "../lib/prisma";
 
-
 async function main() {
   // Create a new user with a post
   const user = await prisma.user.create({
