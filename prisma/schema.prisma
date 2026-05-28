@@ -28,4 +28,18 @@ model User {
 
   createdAt DateTime @default(now())
 
+  weightLogs WeightLog[]
 } 
+
+model WeightLog {
+  id    Int     @id @default(autoincrement()) 
+  height Float
+  weight Float
+
+  //pk -> chave estrangeira
+  userId Int
+
+  createdAt DateTime @default(now())
+  
+  user User @relation(fields: [userId], references: [id])
+}
