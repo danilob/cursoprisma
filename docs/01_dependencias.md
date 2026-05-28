@@ -15,9 +15,9 @@ npx tsc --init
 ### Instalar dependências
 
 ```bash
-npm install prisma @types/node @types/better-sqlite3 -D
+npm install prisma@latest @types/node @types/better-sqlite3 -D
 ````
 
 ```bash
-npm install @prisma/client @prisma/adapter-better-sqlite3 dotenv
+npm install @prisma/client@latest @prisma/adapter-better-sqlite3 dotenv
 ```
